@@ -8,5 +8,10 @@
       "name": "Rik Meijer",
       "email": "rikmeijer@gmail.com"
     }
-  ]
+  ],
+  "required-dev" : {
+    "phpunit/phpunit": "5.4.2"
+  },
+  "require": {
+  }
 }
