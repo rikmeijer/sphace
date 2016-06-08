@@ -1,4 +1,5 @@
 <?php
+namespace Sphace;
 
 /**
  * Created by PhpStorm.

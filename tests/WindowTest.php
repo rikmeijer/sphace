@@ -8,9 +8,6 @@
 
 namespace Sphace;
 
-
-use Window;
-
 class WindowTest extends \PHPUnit_Framework_TestCase
 {
 
