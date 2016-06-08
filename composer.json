@@ -9,7 +9,7 @@
       "email": "rikmeijer@gmail.com"
     }
   ],
-  "required-dev" : {
+  "require-dev" : {
     "phpunit/phpunit": "5.4.2"
   },
   "require": {
