@@ -1,0 +1,12 @@
+{
+  "name": "rikmeijer/sphace",
+  "description": "Server side user interface written in PHP",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rik Meijer",
+      "email": "rikmeijer@gmail.com"
+    }
+  ]
+}
