@@ -13,10 +13,10 @@ class WindowTest extends \PHPUnit_Framework_TestCase
 
     public function testRender_When_Default_Expect_WeelFormedHTML5WithBODYTag()
     {
-        $object = new Window();
+        $object = new Window("Hello World");
 
         $html = $object->render();
 
-        $this->assertEquals('<!DOCTYPE html><html><body></body></html>', $html);
+        $this->assertEquals('<!DOCTYPE html><html><head><title>Hello World</title></head><body></body></html>', $html);
     }
 }
