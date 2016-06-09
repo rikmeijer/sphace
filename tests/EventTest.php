@@ -23,5 +23,13 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($called);
     }
 
+    public function testTrigger_When_CallbackGivenWithReturnValue_Expect_ReturnCallbackValue()
+    {
+        $event = new Event(function() {
+            return 'Hello World';
+        });
+        
+        $this->assertEquals('Hello World', $event->trigger());
+    }
 
 }

@@ -25,6 +25,6 @@ class Event
 
     public function trigger()
     {
-        call_user_func($this->callback);
+        return call_user_func($this->callback);
     }
 }
