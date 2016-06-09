@@ -1,13 +1,12 @@
 <?php
 declare(strict_types = 1);
-namespace Sphace;
-
 /**
  * Created by PhpStorm.
  * User: Rik Meijer
  * Date: 9-6-2016
  * Time: 11:38
  */
+namespace Sphace;
 
 class EventTest extends \PHPUnit_Framework_TestCase
 {

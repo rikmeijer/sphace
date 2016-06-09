@@ -1,14 +1,12 @@
 <?php
 declare(strict_types = 1);
-namespace Sphace;
-
 /**
  * Created by PhpStorm.
  * User: Rik Meijer
  * Date: 8-6-2016
  * Time: 21:11
  */
-
+namespace Sphace;
 
 class WindowTest extends \PHPUnit_Framework_TestCase
 {
