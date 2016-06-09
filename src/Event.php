@@ -1,5 +1,5 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
+namespace Sphace;
 
 /**
  * Created by PhpStorm.
@@ -7,9 +7,6 @@ declare(strict_types=1);
  * Date: 9-6-2016
  * Time: 11:46
  */
-
-namespace Sphace;
-
 
 class Event
 {

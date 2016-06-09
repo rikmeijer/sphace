@@ -1,5 +1,5 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
+namespace Sphace;
 
 /**
  * Created by PhpStorm.
@@ -8,7 +8,6 @@ declare(strict_types=1);
  * Time: 21:11
  */
 
-namespace Sphace;
 
 class WindowTest extends \PHPUnit_Framework_TestCase
 {
