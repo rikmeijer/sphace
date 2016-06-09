@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types = 1);
 namespace Sphace;
 
 /**
@@ -13,7 +14,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     public function testTrigger_When_CallbackGiven_Expect_CallbackCalled()
     {
         $called = false;
-        $event = new Event(function() use (&$called) {
+        $event = new Event(function () use (&$called) {
             $called = true;
         });
 
@@ -24,7 +25,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
 
     public function testTrigger_When_CallbackGivenWithReturnValue_Expect_ReturnCallbackValue()
     {
-        $event = new Event(function() {
+        $event = new Event(function () {
             return 'Hello World';
         });
 
