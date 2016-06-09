@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * Created by PhpStorm.
  * User: Rik Meijer
@@ -28,7 +30,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $event = new Event(function() {
             return 'Hello World';
         });
-        
+
         $this->assertEquals('Hello World', $event->trigger());
     }
 
