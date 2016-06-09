@@ -11,7 +11,7 @@ namespace Sphace;
 class WindowTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function testRender_When_Default_Expect_WeelFormedHTML5WithBODYTag()
+    public function testRender_When_Default_Expect_WellFormedHTML5WithBODYTag()
     {
         $object = new Window("Hello World");
 
@@ -20,7 +20,7 @@ class WindowTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('<!DOCTYPE html><html><head><title>Hello World</title></head><body></body></html>', $html);
     }
 
-    public function testRender_When_NonASCIITitle_Expect_WeelFormedHTML5WithBODYTag()
+    public function testRender_When_NonASCIITitle_Expect_WellFormedHTML5WithBODYTag()
     {
         $object = new Window("Hello Wörld");
 
