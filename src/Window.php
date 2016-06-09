@@ -22,6 +22,6 @@ class Window
 
     public function render()
     {
-        return '<!DOCTYPE html><html><head><title>' . $this->title . '</title></head><body></body></html>';
+        return '<!DOCTYPE html><html><head><title>' . htmlentities($this->title) . '</title></head><body></body></html>';
     }
 }

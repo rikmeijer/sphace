@@ -19,4 +19,13 @@ class WindowTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('<!DOCTYPE html><html><head><title>Hello World</title></head><body></body></html>', $html);
     }
+
+    public function testRender_When_NonASCIITitle_Expect_WeelFormedHTML5WithBODYTag()
+    {
+        $object = new Window("Hello Wörld");
+
+        $html = $object->render();
+
+        $this->assertEquals('<!DOCTYPE html><html><head><title>Hello W&ouml;rld</title></head><body></body></html>', $html);
+    }
 }
