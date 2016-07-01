@@ -12,7 +12,7 @@ class DOM
         if (count($attributes) > 0) {
             $this->html .= ' ';
             foreach ($attributes as $key => $value) {
-                $this->html .= $key . '="' . $value . '"';
+                $this->html .= $key . '="' . htmlentities($value, ENT_HTML5) . '"';
             }
         }
         $this->html .= '>';
