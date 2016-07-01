@@ -20,9 +20,13 @@ class DOM
     {
         $this->html .= '<' . $this->filterTag($tag);
         if (count($attributes) > 0) {
-            $this->html .= ' ';
             foreach ($attributes as $key => $value) {
-                $this->html .= $key . '="' . $this->escape($value) . '"';
+                $this->html .= ' ';
+                if (is_integer($key)) {
+                    $this->html .= $value;
+                } else {
+                    $this->html .= $key . '="' . $this->escape($value) . '"';
+                }
             }
         }
         $this->html .= '>';

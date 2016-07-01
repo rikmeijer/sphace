@@ -2,20 +2,6 @@
 declare(strict_types = 1);
 namespace Sphace\HTML5;
 
-
-/**        
-        document()->open('html', [
-            'lang' => 'en',
-            'disabled'
-        ])
-            ->open('head')
-            ->open('title')
-            ->text("Hello World")
-            ->close('title')
-            ->close('head')
-            ->close('html');
-            */
-
 class DOMTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -40,6 +26,16 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $openedObject = $object->open('html', ['lang' => 'en']);
         
         $this->assertEquals('<!DOCTYPE html><html lang="en">', $openedObject->__toString());
+    }
+
+
+    public function testOpen_When_NonValuedAttributes_Expect_WellformedOpeningTagWithAttributes()
+    {
+        $object = new DOM();
+    
+        $openedObject = $object->open('html', ['lang' => 'en', 'disabled']);
+    
+        $this->assertEquals('<!DOCTYPE html><html lang="en" disabled>', $openedObject->__toString());
     }
     
     public function testOpen_When_ForbiddenCharacters_Expect_FilteredOpeningTag()
