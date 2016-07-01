@@ -9,6 +9,12 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("<!DOCTYPE html>", dom()->__toString());
     }
     
+
+    public function testFragment_When_Default_Expect_WellformedFragment()
+    {
+        $this->assertEquals("<body>", fragment()->open('body')->__toString());
+    }
+    
     public function testConstructor_When_RawHTMLPassed_Expect_RawHTMLPrepended()
     {
         $object = new DOM('<!DOCTYPE html>');
