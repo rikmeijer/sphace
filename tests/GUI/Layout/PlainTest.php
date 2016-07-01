@@ -8,9 +8,10 @@ class PlainTest extends \PHPUnit_Framework_TestCase
     public function testRender_When_Default_Expect_WellFormedBODYTag()
     {
         $object = new Plain();
+        $html = \Sphace\HTML5\fragment();
         
-        $html = (string)$object->render();
+        $object->render($html);
         
-        $this->assertEquals('<body></body>', $html);
+        $this->assertEquals('<body></body>', (string)$html);
     }
 }

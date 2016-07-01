@@ -26,8 +26,10 @@ class Window implements \Sphace\GUI
         $this->layout = $layout;
     }
 
-    public function render(): \Sphace\HTML5\DOM
+    public function render(\Sphace\HTML5\DOM $dom)
     {
-        return \Sphace\HTML5\dom()->open('html')->open('head')->open('title')->text($this->title)->close('title')->close('head')->append($this->layout->render())->close('html');
+        $dom->open('html')->open('head')->open('title')->text($this->title)->close('title')->close('head');
+        $this->layout->render($dom);
+        $dom->close('html');
     }
 }

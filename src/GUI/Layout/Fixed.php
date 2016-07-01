@@ -16,8 +16,8 @@ class Fixed implements \Sphace\GUI\Layout
         $this->width = $width;
     }
 
-    public function render(): \Sphace\HTML5\DOM
+    public function render(\Sphace\HTML5\DOM $dom)
     {
-        return \Sphace\HTML5\fragment()->open('body', ['style' => "width: " . $this->width . "px;"])->close('body');
+        $dom->open('body', ['style' => "width: " . $this->width . "px;"])->close('body');
     }
 }

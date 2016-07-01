@@ -5,5 +5,5 @@ namespace Sphace;
 interface GUI
 {
 
-    function render(): \Sphace\HTML5\DOM;
+    function render(\Sphace\HTML5\DOM $dom);
 }
