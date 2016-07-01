@@ -19,3 +19,4 @@ Important features:
 
 Sources
 http://itsnat.sourceforge.net/php/spim/spi_manifesto_en.php
+http://www.iraqtimeline.com/maxdesign/basicdesign/principles/prinlayout.html
