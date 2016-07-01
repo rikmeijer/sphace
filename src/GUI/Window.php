@@ -12,17 +12,19 @@ class Window
 {
 
     private $title;
+    private $layout;
 
     /**
      * Window constructor.
      */
-    public function __construct(string $title)
+    public function __construct(string $title, Layout\Plain $layout)
     {
         $this->title = $title;
+        $this->layout = $layout;
     }
 
     public function render()
     {
-        return '<!DOCTYPE html><html><head><title>' . htmlentities($this->title) . '</title></head><body></body></html>';
+        return '<!DOCTYPE html><html><head><title>' . htmlentities($this->title) . '</title></head>' . $this->layout->render() . '</html>';
     }
 }

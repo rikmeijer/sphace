@@ -13,7 +13,7 @@ class WindowTest extends \PHPUnit_Framework_TestCase
 
     public function testRender_When_Default_Expect_WellFormedHTML5WithBODYTag()
     {
-        $object = new Window("Hello World");
+        $object = new Window("Hello World", new Layout\Plain());
 
         $html = $object->render();
 
@@ -22,7 +22,7 @@ class WindowTest extends \PHPUnit_Framework_TestCase
 
     public function testRender_When_NonASCIITitle_Expect_WellFormedHTML5WithBODYTag()
     {
-        $object = new Window("Hello Wörld");
+        $object = new Window("Hello Wörld", new Layout\Plain());
 
         $html = $object->render();
 
