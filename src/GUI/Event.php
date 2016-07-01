@@ -15,7 +15,8 @@ class Event
 
     /**
      * Event constructor.
-     * @param callable $callback
+     * 
+     * @param callable $callback            
      */
     public function __construct(callable $callback)
     {

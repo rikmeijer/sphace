@@ -4,5 +4,6 @@ namespace Sphace;
 
 interface GUI
 {
+
     function render(): string;
 }

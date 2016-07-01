@@ -14,9 +14,9 @@ class FixedTest extends \PHPUnit_Framework_TestCase
     public function testRender_When_Default_Expect_WellFormedBODYTag()
     {
         $object = new Fixed(800);
-
+        
         $html = $object->render();
-
+        
         $this->assertEquals('<body style="width: 800px;"></body>', $html);
     }
 }

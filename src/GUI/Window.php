@@ -12,6 +12,7 @@ class Window implements \Sphace\GUI
 {
 
     private $title;
+
     private $layout;
 
     /**
