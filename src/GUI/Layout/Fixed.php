@@ -3,7 +3,7 @@ declare ( strict_types = 1 );
 
 namespace Sphace\GUI\Layout;
 
-class Fixed {
+class Fixed implements \Sphace\GUI\Layout {
 	
 	private $width;
 	

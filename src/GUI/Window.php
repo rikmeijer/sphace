@@ -17,7 +17,7 @@ class Window
     /**
      * Window constructor.
      */
-    public function __construct(string $title, Layout\Plain $layout)
+    public function __construct(string $title, Layout $layout)
     {
         $this->title = $title;
         $this->layout = $layout;

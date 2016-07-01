@@ -3,7 +3,7 @@ declare ( strict_types = 1 );
 
 namespace Sphace\GUI\Layout;
 
-class Plain {
+class Plain implements \Sphace\GUI\Layout {
 	
 	public function render() {
 		return '<body></body>';
