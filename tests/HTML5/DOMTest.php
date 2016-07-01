@@ -65,13 +65,13 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("<!DOCTYPE html><html>", $openedObject->__toString());
     }
     
-    public function testOpen_When_EscapableAttributes_Expect_WellformedOpeningTagWithEscapedAttributes()
+    public function testOpen_When_DoubleQuotedAttributes_Expect_WellformedOpeningTagWithEscapedAttributes()
     {
         $object = new DOM();
         
-        $openedObject = $object->open('html', ['lang' => 'ën']);
+        $openedObject = $object->open('html', ['lang' => '"n']);
         
-        $this->assertEquals('<!DOCTYPE html><html lang="&euml;n">', $openedObject->__toString());
+        $this->assertEquals('<!DOCTYPE html><html lang="&quot;n">', $openedObject->__toString());
     }
 
     public function testOpen_When_NoAttributesCalledNested_Expect_WellformedOpeningTagAndNestedOpeningTag()

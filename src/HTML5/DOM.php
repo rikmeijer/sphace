@@ -35,9 +35,14 @@ class DOM
                 $this->html .= ' ';
                 if (is_integer($key)) {
                     $this->html .= $this->filterAttribute($value);
-                } else {
-                    $this->html .= $this->filterAttribute($key) . '="' . $this->escape($value) . '"';
+                    continue;
+                } 
+                
+                if (strpos($value, '"') !== false) {
+                    $value = str_replace('"', '&quot;', $value);
                 }
+                
+                $this->html .= $this->filterAttribute($key) . '="' . $value . '"';
             }
         }
         $this->html .= '>';
