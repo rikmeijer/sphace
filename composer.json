@@ -16,6 +16,10 @@
   	"php" : "~7.0"
   },
   "autoload": {
-    "psr-4": {"Sphace\\": "src/"}
+    "psr-4": {"Sphace\\": "src/"},
+    
+    "files": [
+    	"src/HTML5/functions.php"
+   	]
   }
 }

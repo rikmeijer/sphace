@@ -27,7 +27,7 @@ class Window implements \Sphace\GUI
     }
 
     public function render(): string
-    {
+    {      
         return '<!DOCTYPE html><html><head><title>' . htmlentities($this->title) . '</title></head>' . $this->layout->render() . '</html>';
     }
 }
