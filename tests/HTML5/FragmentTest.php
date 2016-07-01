@@ -4,6 +4,11 @@ namespace Sphace\HTML5;
 
 class FragmentTest extends \PHPUnit_Framework_TestCase
 {    
+    public function testDom_When_Default_Expect_WellformedDoctype()
+    {
+        $this->assertEquals("<!DOCTYPE html>", dom()->__toString());
+    }
+    
     public function testConstructor_When_RawHTMLPassed_Expect_RawHTMLPrepended()
     {
         $object = new Fragment('<!DOCTYPE html>');
