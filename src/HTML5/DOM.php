@@ -25,12 +25,6 @@ class DOM
     {
         return htmlentities($text, ENT_HTML5);
     }
-
-    public function append(DOM $dom): DOM
-    {
-        $this->html .= $dom->html;
-        return $this;
-    }
     
     public function open(string $tag, array $attributes = []): DOM
     {
