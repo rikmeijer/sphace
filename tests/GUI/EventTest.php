@@ -6,7 +6,7 @@ declare(strict_types = 1);
  * Date: 9-6-2016
  * Time: 11:38
  */
-namespace Sphace;
+namespace Sphace\GUI;
 
 class EventTest extends \PHPUnit_Framework_TestCase
 {

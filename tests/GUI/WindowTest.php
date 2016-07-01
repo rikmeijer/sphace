@@ -6,7 +6,7 @@ declare(strict_types = 1);
  * Date: 8-6-2016
  * Time: 21:11
  */
-namespace Sphace;
+namespace Sphace\GUI;
 
 class WindowTest extends \PHPUnit_Framework_TestCase
 {
