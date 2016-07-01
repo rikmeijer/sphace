@@ -6,9 +6,14 @@ class DOM
 {
     private $html = '<!DOCTYPE html>';
     
-    private function filterTag($tag): string
+    private function filterTag(string $tag): string
     {
         return preg_replace("/[^a-zA-Z0-9]+/", "", $tag);
+    }
+    
+    private function escape(string $text): string
+    {
+        return htmlentities($text, ENT_HTML5);
     }
 
     public function open(string $tag, array $attributes = []): DOM
@@ -17,7 +22,7 @@ class DOM
         if (count($attributes) > 0) {
             $this->html .= ' ';
             foreach ($attributes as $key => $value) {
-                $this->html .= $key . '="' . htmlentities($value, ENT_HTML5) . '"';
+                $this->html .= $key . '="' . $this->escape($value) . '"';
             }
         }
         $this->html .= '>';
@@ -32,7 +37,7 @@ class DOM
     
     public function text(string $text): DOM
     {
-        $this->html .= htmlentities($text, ENT_HTML5);
+        $this->html .= $this->escape($text);
         return $this;
     }
     
