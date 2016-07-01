@@ -6,6 +6,11 @@ class DOM
 {
     private $html;
     
+    public function __construct($html = '')
+    {
+        $this->html = $html;
+    }
+    
     private function filterTag(string $tag): string
     {
         return preg_replace("/[^a-zA-Z0-9]+/", "", $tag);
@@ -63,6 +68,6 @@ class DOM
     
     public function __toString(): string
     {
-        return '<!DOCTYPE html>' . $this->html;
+        return $this->html;
     }
 }
