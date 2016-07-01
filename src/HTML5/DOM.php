@@ -6,9 +6,16 @@ class DOM
 {
     private $html = '<!DOCTYPE html>';
 
-    public function open(string $tag): DOM
+    public function open(string $tag, array $attributes = []): DOM
     {
-        $this->html .= '<' . $tag . '>';
+        $this->html .= '<' . $tag;
+        if (count($attributes) > 0) {
+            $this->html .= ' ';
+            foreach ($attributes as $key => $value) {
+                $this->html .= $key . '="' . $value . '"';
+            }
+        }
+        $this->html .= '>';
         return $this;
     }
     
