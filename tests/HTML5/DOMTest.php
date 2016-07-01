@@ -77,4 +77,14 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
         $this->assertEquals("<!DOCTYPE html>Hello World", $openedObject->__toString());
     }
+
+
+    public function testText_When_EscapableText_Expect_EscapedText()
+    {
+        $object = new DOM();
+    
+        $openedObject = $object->text('Hello Wörld');
+    
+        $this->assertEquals("<!DOCTYPE html>Hello W&ouml;rld", $openedObject->__toString());
+    }
 }

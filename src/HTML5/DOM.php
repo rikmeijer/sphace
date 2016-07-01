@@ -27,7 +27,7 @@ class DOM
     
     public function text(string $text): DOM
     {
-        $this->html .= $text;
+        $this->html .= htmlentities($text, ENT_HTML5);
         return $this;
     }
     
