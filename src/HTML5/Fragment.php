@@ -63,6 +63,6 @@ class Fragment
     
     public function __toString(): string
     {
-        return '<!DOCTYPE html>' . $this->html;
+        return $this->html;
     }
 }
