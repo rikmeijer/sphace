@@ -5,10 +5,15 @@ namespace Sphace\HTML5;
 class DOM
 {
     private $html = '<!DOCTYPE html>';
+    
+    private function filterTag($tag): string
+    {
+        return preg_replace("/[^a-zA-Z0-9]+/", "", $tag);
+    }
 
     public function open(string $tag, array $attributes = []): DOM
     {
-        $this->html .= '<' . preg_replace("/[^a-zA-Z0-9]+/", "", $tag);
+        $this->html .= '<' . $this->filterTag($tag);
         if (count($attributes) > 0) {
             $this->html .= ' ';
             foreach ($attributes as $key => $value) {
@@ -21,7 +26,7 @@ class DOM
     
     public function close(string $tag): DOM
     {
-        $this->html .= '</' . preg_replace("/[^a-zA-Z0-9]+/", "", $tag) .'>';
+        $this->html .= '</' . $this->filterTag($tag) .'>';
         return $this;
     }
     
