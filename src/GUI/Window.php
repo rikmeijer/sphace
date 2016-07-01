@@ -1,18 +1,20 @@
 <?php
 declare(strict_types = 1);
-/**
- * Created by PhpStorm.
- * User: Rik Meijer
- * Date: 8-6-2016
- * Time: 21:19
- */
 namespace Sphace\GUI;
 
 class Window implements \Sphace\GUI
 {
-
+    
+    /**
+     * 
+     * @var string
+     */
     private $title;
 
+    /**
+     * 
+     * @var Layout
+     */
     private $layout;
 
     /**

@@ -5,6 +5,10 @@ namespace Sphace\GUI\Layout;
 class Fixed implements \Sphace\GUI\Layout
 {
 
+    /**
+     * 
+     * @var int
+     */
     private $width;
 
     public function __construct(int $width)
