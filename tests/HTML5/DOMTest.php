@@ -37,7 +37,6 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('<!DOCTYPE html><html lan-g="en">', $openedObject->__toString());
     }
 
-
     public function testOpen_When_NonValuedAttributes_Expect_WellformedOpeningTagWithAttributes()
     {
         $object = new DOM();
@@ -45,6 +44,16 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $openedObject = $object->open('html', ['lang' => 'en', 'disabled']);
     
         $this->assertEquals('<!DOCTYPE html><html lang="en" disabled>', $openedObject->__toString());
+    }
+
+
+    public function testOpen_When_NonValuedAttributesWithSpaces_Expect_WellformedOpeningTagWithAttributes()
+    {
+        $object = new DOM();
+    
+        $openedObject = $object->open('html', ['lang' => 'en', 'disa bled']);
+    
+        $this->assertEquals('<!DOCTYPE html><html lang="en" disa-bled>', $openedObject->__toString());
     }
     
     public function testOpen_When_ForbiddenCharacters_Expect_FilteredOpeningTag()

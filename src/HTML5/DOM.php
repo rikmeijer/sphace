@@ -23,7 +23,7 @@ class DOM
             foreach ($attributes as $key => $value) {
                 $this->html .= ' ';
                 if (is_integer($key)) {
-                    $this->html .= $value;
+                    $this->html .= preg_replace("/\s+/", "-", $value);
                 } else {
                     $this->html .= preg_replace("/\s+/", "-", $key) . '="' . $this->escape($value) . '"';
                 }
