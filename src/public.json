@@ -1,3 +1,6 @@
 {
-	"title": "Hello World"
+	"title": "Hello World",
+	"layout": ["fixed", {
+		"width": 800
+	}]
 }
