@@ -8,7 +8,7 @@ class DOM
 
     public function open(string $tag, array $attributes = []): DOM
     {
-        $this->html .= '<' . $tag;
+        $this->html .= '<' . preg_replace("/[^a-zA-Z0-9]+/", "", $tag);
         if (count($attributes) > 0) {
             $this->html .= ' ';
             foreach ($attributes as $key => $value) {

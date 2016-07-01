@@ -42,6 +42,15 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('<!DOCTYPE html><html lang="en">', $openedObject->__toString());
     }
     
+    public function testOpen_When_ForbiddenCharacters_Expect_FilteredOpeningTag()
+    {
+        $object = new DOM();
+        
+        $openedObject = $object->open('ht&m&l');
+        
+        $this->assertEquals("<!DOCTYPE html><html>", $openedObject->__toString());
+    }
+    
     public function testOpen_When_EscapableAttributes_Expect_WellformedOpeningTagWithEscapedAttributes()
     {
         $object = new DOM();
