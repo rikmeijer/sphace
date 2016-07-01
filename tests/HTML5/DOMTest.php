@@ -27,6 +27,15 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         
         $this->assertEquals('<!DOCTYPE html><html lang="en">', $openedObject->__toString());
     }
+    
+    public function testOpen_When_AttributeWithSpace_Expect_WellformedOpeningTagWithAttributes()
+    {
+        $object = new DOM();
+        
+        $openedObject = $object->open('html', ['lan g' => 'en']);
+        
+        $this->assertEquals('<!DOCTYPE html><html lan-g="en">', $openedObject->__toString());
+    }
 
 
     public function testOpen_When_NonValuedAttributes_Expect_WellformedOpeningTagWithAttributes()

@@ -25,7 +25,7 @@ class DOM
                 if (is_integer($key)) {
                     $this->html .= $value;
                 } else {
-                    $this->html .= $key . '="' . $this->escape($value) . '"';
+                    $this->html .= preg_replace("/\s+/", "-", $key) . '="' . $this->escape($value) . '"';
                 }
             }
         }
