@@ -16,3 +16,6 @@ Important features:
 - versioning
 - photo/album sharing
 - file (re)organisation
+
+Sources
+http://itsnat.sourceforge.net/php/spim/spi_manifesto_en.php
