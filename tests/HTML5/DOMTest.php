@@ -51,4 +51,13 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("<!DOCTYPE html><html><head>", $openedObject->__toString());
     }
     
+    public function testClose_When_Default_Expect_WellformedClosingTag()
+    {
+        $object = new DOM();
+        
+        $openedObject = $object->close('html');
+        
+        $this->assertEquals("<!DOCTYPE html></html>", $openedObject->__toString());
+    }
+    
 }

@@ -19,6 +19,12 @@ class DOM
         return $this;
     }
     
+    public function close(string $tag): DOM
+    {
+        $this->html .= '</' . $tag .'>';
+        return $this;
+    }
+    
     public function __toString(): string
     {
         return $this->html;
