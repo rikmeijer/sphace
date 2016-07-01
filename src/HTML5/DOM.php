@@ -4,7 +4,7 @@ namespace Sphace\HTML5;
 
 class DOM
 {
-    private $html = '<!DOCTYPE html>';
+    private $html;
     
     private function filterTag(string $tag): string
     {
@@ -21,6 +21,12 @@ class DOM
         return htmlentities($text, ENT_HTML5);
     }
 
+    public function append(DOM $dom): DOM
+    {
+        $this->html .= $dom->html;
+        return $this;
+    }
+    
     public function open(string $tag, array $attributes = []): DOM
     {
         $this->html .= '<' . $this->filterTag($tag);
@@ -52,6 +58,6 @@ class DOM
     
     public function __toString(): string
     {
-        return $this->html;
+        return '<!DOCTYPE html>' . $this->html;
     }
 }

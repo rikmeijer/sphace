@@ -128,4 +128,13 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
         $this->assertEquals("<!DOCTYPE html>Hello W&ouml;rld", $openedObject->__toString());
     }
+    
+    public function testAppend_When_DOM_Expect_AppendedHTML()
+    {
+        $object = new DOM();
+    
+        $openedObject = $object->append((new DOM())->open("html"));
+    
+        $this->assertEquals("<!DOCTYPE html><html>", $openedObject->__toString());
+    }
 }
