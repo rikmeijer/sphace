@@ -8,7 +8,7 @@ declare(strict_types = 1);
  */
 namespace Sphace\GUI;
 
-class Window
+class Window implements \Sphace\GUI
 {
 
     private $title;
@@ -23,7 +23,7 @@ class Window
         $this->layout = $layout;
     }
 
-    public function render()
+    public function render(): string
     {
         return '<!DOCTYPE html><html><head><title>' . htmlentities($this->title) . '</title></head>' . $this->layout->render() . '</html>';
     }

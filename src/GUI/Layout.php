@@ -1,7 +1,7 @@
 <?php
 namespace Sphace\GUI;
 
-interface Layout {
+interface Layout extends \Sphace\GUI {
     
     
     

@@ -11,7 +11,7 @@ class Fixed implements \Sphace\GUI\Layout {
 		$this->width = $width;
 	}
 	
-	public function render() {
+	public function render(): string {
 		return '<body style="width: ' . $this->width . 'px;"></body>';
 	}
 }
