@@ -1,6 +1,6 @@
 {
   "name": "rikmeijer/sphace",
-  "description": "Server side user interface written in PHP",
+  "description": "webbased photo manager written in PHP",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
