@@ -32,5 +32,14 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         
         $this->assertEquals("<!DOCTYPE html><html>", $openedObject->__toString());
     }
+
+    public function testOpen_When_NoAttributesCalledNested_Expect_WellformedOpeningTagAndNestedOpeningTag()
+    {
+        $object = new DOM();
+    
+        $openedObject = $object->open('html')->open('head');
+    
+        $this->assertEquals("<!DOCTYPE html><html><head>", $openedObject->__toString());
+    }
     
 }
