@@ -5,8 +5,8 @@ namespace Sphace\GUI\Layout;
 class Plain implements \Sphace\GUI\Layout
 {
 
-    public function render(): string
+    public function render(): \Sphace\HTML5\DOM
     {
-        return '<body></body>';
+        return \Sphace\HTML5\fragment()->open('body')->close('body');
     }
 }

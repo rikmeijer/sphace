@@ -15,7 +15,7 @@ class FixedTest extends \PHPUnit_Framework_TestCase
     {
         $object = new Fixed(800);
         
-        $html = $object->render();
+        $html = (string)$object->render();
         
         $this->assertEquals('<body style="width: 800px;"></body>', $html);
     }

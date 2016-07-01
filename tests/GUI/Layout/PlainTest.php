@@ -9,7 +9,7 @@ class PlainTest extends \PHPUnit_Framework_TestCase
     {
         $object = new Plain();
         
-        $html = $object->render();
+        $html = (string)$object->render();
         
         $this->assertEquals('<body></body>', $html);
     }
