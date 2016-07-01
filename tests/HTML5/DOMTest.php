@@ -27,7 +27,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testOpen_When_NoAttributes_Expect_WellformedOpeningTag()
     {
-        $object = new DOM();
+        $object = fragment();
         
         $openedObject = $object->open('html');
         
@@ -36,7 +36,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testOpen_When_Attributes_Expect_WellformedOpeningTagWithAttributes()
     {
-        $object = new DOM();
+        $object = fragment();
         
         $openedObject = $object->open('html', ['lang' => 'en']);
         
@@ -45,7 +45,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testOpen_When_AttributeWithSpace_Expect_WellformedOpeningTagWithAttributes()
     {
-        $object = new DOM();
+        $object = fragment();
         
         $openedObject = $object->open('html', ['lan g' => 'en']);
         
@@ -54,7 +54,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
 
     public function testOpen_When_NonValuedAttributes_Expect_WellformedOpeningTagWithAttributes()
     {
-        $object = new DOM();
+        $object = fragment();
     
         $openedObject = $object->open('html', ['lang' => 'en', 'disabled']);
     
@@ -64,7 +64,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
 
     public function testOpen_When_NonValuedAttributesWithSpaces_Expect_WellformedOpeningTagWithAttributes()
     {
-        $object = new DOM();
+        $object = fragment();
     
         $openedObject = $object->open('html', ['lang' => 'en', 'disa bled']);
     
@@ -73,7 +73,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testOpen_When_ForbiddenCharacters_Expect_FilteredOpeningTag()
     {
-        $object = new DOM();
+        $object = fragment();
         
         $openedObject = $object->open('ht&m&l');
         
@@ -82,7 +82,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testOpen_When_DoubleQuotedAttributes_Expect_WellformedOpeningTagWithEscapedAttributes()
     {
-        $object = new DOM();
+        $object = fragment();
         
         $openedObject = $object->open('html', ['lang' => '"n']);
         
@@ -91,7 +91,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
 
     public function testOpen_When_NoAttributesCalledNested_Expect_WellformedOpeningTagAndNestedOpeningTag()
     {
-        $object = new DOM();
+        $object = fragment();
     
         $openedObject = $object->open('html')->open('head');
     
@@ -100,7 +100,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testClose_When_Default_Expect_WellformedClosingTag()
     {
-        $object = new DOM();
+        $object = fragment();
         
         $openedObject = $object->close('html');
         
@@ -109,7 +109,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testClose_When_ForbiddenCharacters_Expect_FilteredClosingTag()
     {
-        $object = new DOM();
+        $object = fragment();
         
         $openedObject = $object->close('ht&m&l');
         
@@ -118,7 +118,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
 
     public function testClose_When_NoAttributesCalledNested_Expect_WellformedClosingTagAndNestedClosingTag()
     {
-        $object = new DOM();
+        $object = fragment();
     
         $openedObject = $object->close('html')->close('head');
     
@@ -127,7 +127,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
     
     public function testText_When_SimpleText_Expect_SimpleText()
     {
-        $object = new DOM();
+        $object = fragment();
     
         $openedObject = $object->text('Hello World');
     
@@ -137,7 +137,7 @@ class DOMTest extends \PHPUnit_Framework_TestCase
 
     public function testText_When_EscapableText_Expect_EscapedText()
     {
-        $object = new DOM();
+        $object = fragment();
     
         $openedObject = $object->text('Hello Wörld');
     
