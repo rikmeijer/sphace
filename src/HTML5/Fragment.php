@@ -6,6 +6,11 @@ class Fragment
 {
     private $html;
     
+    public function __construct($html = '')
+    {
+        $this->html = $html;
+    }
+    
     private function filterTag(string $tag): string
     {
         return preg_replace("/[^a-zA-Z0-9]+/", "", $tag);
