@@ -21,7 +21,7 @@ class DOM
     
     public function close(string $tag): DOM
     {
-        $this->html .= '</' . $tag .'>';
+        $this->html .= '</' . preg_replace("/[^a-zA-Z0-9]+/", "", $tag) .'>';
         return $this;
     }
     

@@ -77,6 +77,15 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         
         $this->assertEquals("<!DOCTYPE html></html>", $openedObject->__toString());
     }
+    
+    public function testClose_When_ForbiddenCharacters_Expect_FilteredClosingTag()
+    {
+        $object = new DOM();
+        
+        $openedObject = $object->close('ht&m&l');
+        
+        $this->assertEquals("<!DOCTYPE html></html>", $openedObject->__toString());
+    }
 
     public function testClose_When_NoAttributesCalledNested_Expect_WellformedClosingTagAndNestedClosingTag()
     {
