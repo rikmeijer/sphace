@@ -11,6 +11,11 @@ class DOM
         return preg_replace("/[^a-zA-Z0-9]+/", "", $tag);
     }
     
+    private function filterAttribute(string $key): string
+    {
+        return preg_replace("/\s+/", "-", $key);
+    }
+    
     private function escape(string $text): string
     {
         return htmlentities($text, ENT_HTML5);
@@ -23,9 +28,9 @@ class DOM
             foreach ($attributes as $key => $value) {
                 $this->html .= ' ';
                 if (is_integer($key)) {
-                    $this->html .= preg_replace("/\s+/", "-", $value);
+                    $this->html .= $this->filterAttribute($value);
                 } else {
-                    $this->html .= preg_replace("/\s+/", "-", $key) . '="' . $this->escape($value) . '"';
+                    $this->html .= $this->filterAttribute($key) . '="' . $this->escape($value) . '"';
                 }
             }
         }
