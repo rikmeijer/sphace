@@ -69,4 +69,12 @@ class DOMTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("<!DOCTYPE html></html></head>", $openedObject->__toString());
     }
     
+    public function testText_When_SimpleText_Expect_SimpleText()
+    {
+        $object = new DOM();
+    
+        $openedObject = $object->text('Hello World');
+    
+        $this->assertEquals("<!DOCTYPE html>Hello World", $openedObject->__toString());
+    }
 }

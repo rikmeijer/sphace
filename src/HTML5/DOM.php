@@ -25,6 +25,12 @@ class DOM
         return $this;
     }
     
+    public function text(string $text): DOM
+    {
+        $this->html .= $text;
+        return $this;
+    }
+    
     public function __toString(): string
     {
         return $this->html;
